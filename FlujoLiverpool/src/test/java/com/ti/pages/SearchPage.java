@@ -1,33 +1,23 @@
 package com.ti.pages;
 
-import com.ti.base.DriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SearchPage extends MainPage{
 
-    @FindBy(id = "mainSearchbar")
-    private WebElement txtSearchBar;
 
-    @FindBy(className = "input-group-text")
-    private WebElement btnSearch;
 
-    @FindBy(xpath = "(//*[contains(text(), 'Cerveza Minerva Stout 355 ml')])[1]")
-    private WebElement artCervezaMinerva;
-
-    @FindBy(xpath = "(//*[contains(text(), 'Cerveza Minerva Stout 355 ml')])[3]")
-    private WebElement titleCerveza;
-
-    @FindBy(xpath = "//h2[contains(text(), 'Artículos similares')]")
-    private WebElement sugestions;
+//    @FindBy(xpath = "(//*[contains(text(), 'Cerveza Minerva Stout 355 ml')])[3]")
+//    private WebElement titleCerveza;
 
     @FindBy(linkText = "Generoso")
     private WebElement lnkGeneroso;
@@ -38,80 +28,97 @@ public class SearchPage extends MainPage{
     @FindBy(xpath = "(//button[contains(.,'Mayor precio')])[2]")
     private WebElement btnMayorPrecio;
 
-//    @FindBy(className = "mdc-snackbar--open")
-//    private WebElement alertAdded;
+    @FindBy(className = "card-masonry")
+    private List<WebElement> productList;
 
-//    public MainPage searchItem(){
-//        btnSearch.click();
-//        return this;
-//    }
+    @FindBy(className = "card-title")
+    private List<WebElement> cervesaList;
 
-    public void sortByHihgPrice(){
-//        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(btnMayorPrecio));
-        btnMayorPrecio.click();
-    }
+//    @FindBy(className = "btnGeoStore")
+//    private WebElement btnGeoStore;
 
-    public void selectSortBy(){
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(drpdSortBy));
-        drpdSortBy.click();
-    }
+//    @FindBy(linkText = "AGUASCALIENTES")
+//    private WebElement lknState;
 
-    private void searchItem(String obj){
-        System.out.println("Objeto recibido: "+obj);
-        txtSearchBar.clear();
-        txtSearchBar.sendKeys(obj);
-    }
+    @FindBy(className = "slick-track")
+    private WebElement relatedItems;
 
-    private void search(){
-        btnSearch.click();
-    }
+    @FindBy(id = "opc_pdp_addCartButton")
+    private WebElement btnAddToCart;
 
-    public void clickCervezaMinerva(){
+    /////////////////////////////////////////////////// CERVEZA ///////////////////////////////////////////////////////////
+    public SearchPage clickCervezaMinerva(String item){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.visibilityOf(artCervezaMinerva));
-
-        artCervezaMinerva.click();
+                .until(ExpectedConditions.visibilityOfAllElements(cervesaList));
+        for (WebElement cerveza:cervesaList) {
+            if(cerveza.getText().contains(item)){
+                cerveza.click();
+                break;
+            }
+        }
+        return this;
     }
 
-    public void scrollToDetails(){
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(titleCerveza));
+    public SearchPage scrollToDetails(){
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(btnAddToCart));
 
-        JavascriptExecutor js =(JavascriptExecutor)driver;
+        js =(JavascriptExecutor)driver;
         js.executeScript("var element = document.getElementById('o-product__productSpecsDetails');\n" +
                 "element.scrollIntoView()");
+        return this;
     }
 
-    public void scrollToRelated() throws InterruptedException {
-//        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(sugestions));
-//        Thread.sleep(2000);
-//        JavascriptExecutor js =(JavascriptExecutor)driver;
-//        js.executeScript("var element = document.querySelector(\"section[class='o-carousel-section'] h2[class='ti-carousel']\");\n" +
-//                "element.scrollIntoView()");
+    public SearchPage scrollToRelated() {
         scrollWindow("down");
         scrollWindow("down");
         scrollWindow("down");
         scrollWindow("down");
         scrollWindow("down");
         scrollWindow("down");
+
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
+//                Thread.sleep(2000);
 
         JavascriptExecutor js =(JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0,0);");
-
+        return this;
     }
 
-    public void busqueda(String obj){
-        searchItem(obj);
-        search();
-    }
+    /////////////////////////////////////////////////// VINO ///////////////////////////////////////////////////
 
-
-    public void addToCart() {
-        addTocart();
-//        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(alertAdded));
-//        Assert.assertTrue(alertAdded.getText().equals("Agregaste un producto a tu bolsa"));
-    }
-
-    public void slGeneroso(){
+    public SearchPage typeGenerous(){
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(lnkGeneroso));
         lnkGeneroso.click();
+        return this;
     }
+
+    public SearchPage selectTypeSort(){
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(drpdSortBy));
+        drpdSortBy.click();
+        return this;
+    }
+
+    public SearchPage byHihgPrice(){
+//        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(btnMayorPrecio));
+        btnMayorPrecio.click();
+        return this;
+    }
+
+    public SearchPage selectItemWithHighestPrice(){
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(8))
+                    .until(ExpectedConditions.visibilityOfAllElements(productList));
+        }catch (TimeoutException te){
+//            preLoading();
+            new WebDriverWait(driver, Duration.ofSeconds(8))
+                    .until(ExpectedConditions.visibilityOfAllElements(productList));
+        }
+        WebElement firstProduct = productList.get(0);
+        firstProduct.click();
+        return this;
+    }
+
+
+
 }

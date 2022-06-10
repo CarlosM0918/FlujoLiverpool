@@ -4,6 +4,7 @@ import com.ti.base.BrowserType;
 import com.ti.base.DriverFactory;
 //import com.ti.pages.LoginPage;
 //import com.ti.pages.StudentPage;
+import com.ti.pages.Login;
 import com.ti.pages.SearchPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,12 +16,11 @@ import java.util.Map;
 public class BaseTest {
     String baseURL = "https://www.liverpool.com.mx/tienda/home";
     Map<String, String> productToSearch = new HashMap<>();
-    Map<String, String> studentAccountInfo = new HashMap<>();
-    String[] studentPersonalDetails = {"Female", "TestStudent", "StudentLastName", "14", "TestAddress"};
-    SearchPage search;
+    Map<String, String> credentials = new HashMap<>();
+//    String[] studentPersonalDetails = {"Female", "TestStudent", "StudentLastName", "14", "TestAddress"};
 
-//    StudentPage studentPage;
-//    LoginPage loginPage;
+    SearchPage search;
+    Login loginPage;
 
     @BeforeTest
     @Parameters("browser")
@@ -30,12 +30,12 @@ public class BaseTest {
 
         productToSearch.put("product1", "cerveza");
         productToSearch.put("product2", "vino");
+        productToSearch.put("selectedBeer", "Minerva Stout");
 
-//        studentAccountInfo.put("email", "test@email.com");
-//        studentAccountInfo.put("user", "testuser");
-//        studentAccountInfo.put("password", "test123");
+        credentials.put("email", "test@email.com");
+        credentials.put("password", "test123");
         search = new SearchPage();
-//        loginPage = new LoginPage();
+        loginPage = new Login();
 //        studentPage = new StudentPage();
     }
 
