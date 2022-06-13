@@ -72,16 +72,6 @@ public class SearchPage extends MainPage{
     public SearchPage scrollToRelated() {
         js.executeScript("window.scrollBy(0,1500)");
 
-//        scrollWindow("down");
-//        scrollWindow("down");
-//        scrollWindow("down");
-//        scrollWindow("down");
-//        scrollWindow("down");
-//        scrollWindow("down");
-
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
-//                Thread.sleep(2000);
-
         JavascriptExecutor js =(JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0,0);");
         return this;
