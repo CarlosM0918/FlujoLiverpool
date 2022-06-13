@@ -27,7 +27,7 @@ public class BaseTest {
 
         productToSearch.put("product1", "cerveza");
         productToSearch.put("product2", "vino");
-        productToSearch.put("selectedBeer", "Minerva Stout");
+        productToSearch.put("selectedBeer", "Blue Moon");
 
         credentials.put("email", "test@email.com");
         credentials.put("password", "test123");
