@@ -15,7 +15,7 @@ public class TestClass extends BaseTest {
         search.addToCart().andVerifyItemAddedAlert();
     }
 
-    @Test(priority = 2, enabled = false)
+    @Test(priority = 2)
     void selectWine() throws InterruptedException {
         search.searchItem(productToSearch.get("product2"))
                 .search();

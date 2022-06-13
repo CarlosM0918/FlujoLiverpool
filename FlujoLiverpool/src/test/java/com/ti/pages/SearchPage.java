@@ -1,5 +1,6 @@
 package com.ti.pages;
 
+import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,7 @@ public class SearchPage extends MainPage{
     @FindBy(id = "opc_pdp_addCartButton")
     private WebElement btnAddToCart;
 
+
     /////////////////////////////////////////////////// CERVEZA ///////////////////////////////////////////////////////////
     public SearchPage clickCervezaMinerva(String item){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -69,12 +71,15 @@ public class SearchPage extends MainPage{
 
         js.executeScript("window.scrollBy(0,1750)");
 
-//        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
 
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.invisibilityOf(relatedItems));
 
         JavascriptExecutor js =(JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0,0);");
+
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(btnAddToCart));
+
+        Thread.sleep(2000);
         return this;
     }
 

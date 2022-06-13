@@ -99,9 +99,9 @@ public class MainPage {
     }
 
     public MainPage addToCart(){
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.elementToBeClickable(btnAddToCart));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.visibilityOf(btnAddToCart));
         btnAddToCart.click();
         return this;
     }
@@ -111,6 +111,7 @@ public class MainPage {
         btnSearch.click();
         return this;
     }
+
     public MainPage searchItem(String obj){
         System.out.println("Objeto recibido: "+obj);
         txtSearchBar.clear();
