@@ -7,4 +7,10 @@
             <class name="com.ti.testcases.TestClass"/>
         </classes>
     </test>
+<!--    <test name="EdgeTest">-->
+<!--        <parameter name="browser" value="Edge"/>-->
+<!--        <classes>-->
+<!--            <class name="com.ti.testcases.TestClass"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

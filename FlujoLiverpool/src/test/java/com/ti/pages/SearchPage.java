@@ -34,12 +34,6 @@ public class SearchPage extends MainPage{
     @FindBy(className = "card-title")
     private List<WebElement> cervesaList;
 
-//    @FindBy(className = "btnGeoStore")
-//    private WebElement btnGeoStore;
-
-//    @FindBy(linkText = "AGUASCALIENTES")
-//    private WebElement lknState;
-
     @FindBy(className = "slick-track")
     private WebElement relatedItems;
 
@@ -61,6 +55,8 @@ public class SearchPage extends MainPage{
     }
 
     public SearchPage scrollToDetails(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(btnAddToCart));
 
         js =(JavascriptExecutor)driver;
@@ -69,8 +65,13 @@ public class SearchPage extends MainPage{
         return this;
     }
 
-    public SearchPage scrollToRelated() {
-        js.executeScript("window.scrollBy(0,1500)");
+    public SearchPage scrollToRelated() throws InterruptedException {
+
+        js.executeScript("window.scrollBy(0,1750)");
+
+//        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
+
+        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.invisibilityOf(relatedItems));
 
         JavascriptExecutor js =(JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0,0);");

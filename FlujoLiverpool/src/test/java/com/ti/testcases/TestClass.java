@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class TestClass extends BaseTest {
     @Test(priority = 1, enabled = true)
-    void searchBeer(){
+    void searchBeer() throws InterruptedException {
         search.searchItem(productToSearch.get("product1"))
                 .search();
 
@@ -15,7 +15,7 @@ public class TestClass extends BaseTest {
         search.addToCart().andVerifyItemAddedAlert();
     }
 
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = false)
     void selectWine() throws InterruptedException {
         search.searchItem(productToSearch.get("product2"))
                 .search();
