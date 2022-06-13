@@ -70,12 +70,14 @@ public class SearchPage extends MainPage{
     }
 
     public SearchPage scrollToRelated() {
-        scrollWindow("down");
-        scrollWindow("down");
-        scrollWindow("down");
-        scrollWindow("down");
-        scrollWindow("down");
-        scrollWindow("down");
+        js.executeScript("window.scrollBy(0,1500)");
+
+//        scrollWindow("down");
+//        scrollWindow("down");
+//        scrollWindow("down");
+//        scrollWindow("down");
+//        scrollWindow("down");
+//        scrollWindow("down");
 
         new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.visibilityOf(relatedItems));
 //                Thread.sleep(2000);

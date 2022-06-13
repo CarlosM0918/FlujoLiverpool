@@ -106,14 +106,6 @@ public class MainPage {
         return this;
     }
 
-    public String getItemSearched(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(lnkBuscado));
-        return lnkBuscado.getText();
-    }
-    public MainPage verifyItemSearched(){
-        Assert.assertTrue(getItemSearched().equals("cerveza"));
-        return this;
-    }
 /////////////////////////////////////////////////////////////////////
     public MainPage search(){
         btnSearch.click();
@@ -125,21 +117,6 @@ public class MainPage {
         txtSearchBar.sendKeys(obj);
         return this;
     }
-
-//    public MainPage busqueda(String obj){
-//        searchItem(obj);
-//        search();
-//        return this;
-//    }
-
-//    public MainPage addToCart() {
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//
-//        addTocart();
-////        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(alertAdded));
-////        Assert.assertTrue(alertAdded.getText().equals("Agregaste un producto a tu bolsa"));
-//        return this;
-//    }
 
     public MainPage close(){
         btnClose.click();

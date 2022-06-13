@@ -2,8 +2,6 @@ package com.ti.testcases;
 
 import com.ti.base.BrowserType;
 import com.ti.base.DriverFactory;
-//import com.ti.pages.LoginPage;
-//import com.ti.pages.StudentPage;
 import com.ti.pages.Login;
 import com.ti.pages.SearchPage;
 import org.testng.annotations.AfterTest;
@@ -17,7 +15,6 @@ public class BaseTest {
     String baseURL = "https://www.liverpool.com.mx/tienda/home";
     Map<String, String> productToSearch = new HashMap<>();
     Map<String, String> credentials = new HashMap<>();
-//    String[] studentPersonalDetails = {"Female", "TestStudent", "StudentLastName", "14", "TestAddress"};
 
     SearchPage search;
     Login loginPage;
@@ -36,12 +33,10 @@ public class BaseTest {
         credentials.put("password", "test123");
         search = new SearchPage();
         loginPage = new Login();
-//        studentPage = new StudentPage();
     }
 
     @AfterTest
     void turnDown(){
-//        studentPage.deleteStudent();
         DriverFactory.getInstance().removeDriver();
     }
 }

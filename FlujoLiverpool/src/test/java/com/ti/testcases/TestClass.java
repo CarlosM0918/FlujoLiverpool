@@ -7,7 +7,6 @@ public class TestClass extends BaseTest {
     void searchBeer(){
         search.searchItem(productToSearch.get("product1"))
                 .search();
-        search.verifyItemSearched();
 
         search.clickCervezaMinerva(productToSearch.get("selectedBeer"))
                 .scrollToDetails()
@@ -36,7 +35,7 @@ public class TestClass extends BaseTest {
         loginPage.loginAs(credentials.get("email"))
                 .withPassword(credentials.get("password"))
                 .login();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
     }
 
 }
