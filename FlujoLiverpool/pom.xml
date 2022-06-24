@@ -23,7 +23,7 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>C:\Users\Azul\Desktop\material\FlujoLiverpool\FlujoLiverpool\src\test\java\com\ti\testcases\testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

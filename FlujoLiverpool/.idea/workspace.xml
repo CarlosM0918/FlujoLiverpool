@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f7308b-f4d3-411d-b060-e07bdd7851ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ti/pages/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ti/pages/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ti/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ti/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ti/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ti/pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ti/pages/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ti/pages/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ti/pages/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ti/pages/MainPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ti/testcases/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Driver_Factory_Suite/ChromeTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Driver_Factory_Suite/ChromeTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Driver_Factory_Suite/ChromeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Driver_Factory_Suite/ChromeTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.ti.testcases.TestClass.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-com.ti.testcases.TestClass.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Driver_Factory_Suite/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/ti/pages/SearchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ti/pages/SearchPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,15 +50,28 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ti.base" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Azul\Documents\FlujoLiverpool\src\test\java\com\ti\testcases" />
       <recent name="C:\Users\Azul\Documents\FlujoLiverpool\src\main\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Azul\Desktop\material\FlujoLiverpool\FlujoLiverpool" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ti.base" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Azul/Documents/FlujoLiverpool/src/test/java/com/ti/testcases/testng.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/Azul/Desktop/material/FlujoLiverpool/FlujoLiverpool/testng.xml">
+    <configuration name="C:/Users/Azul/Desktop/material/FlujoLiverpool/FlujoLiverpool/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlujoLiverpool" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/Azul/Documents/FlujoLiverpool/src/test/java/com/ti/testcases/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="FlujoLiverpool" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/com/ti/testcases/testng.xml" />
@@ -83,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/Azul/Desktop/material/FlujoLiverpool/FlujoLiverpool/testng.xml" />
         <item itemvalue="TestNG.C:/Users/Azul/Documents/FlujoLiverpool/src/test/java/com/ti/testcases/testng.xml" />
         <item itemvalue="TestNG.TestClass.searchCerveza" />
       </list>

@@ -92,7 +92,12 @@ public class SearchPage extends MainPage{
     /////////////////////////////////////////////////// VINO ///////////////////////////////////////////////////
 
     public SearchPage typeGenerous(){
-        new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(lnkGeneroso));
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(lnkGeneroso));
+        }catch (TimeoutException te){
+            preLoading(lnkGeneroso);
+            new WebDriverWait(driver, Duration.ofSeconds(8)).until(ExpectedConditions.elementToBeClickable(lnkGeneroso));
+        }
         lnkGeneroso.click();
         return this;
     }
