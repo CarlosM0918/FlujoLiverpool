@@ -52,10 +52,10 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    public MainPage preLoading(){
+    public MainPage preLoading(WebElement opt){
         try {
             new WebDriverWait(driver, Duration.ofSeconds(5))
-                    .until(ExpectedConditions.visibilityOf(dvBag));
+                    .until(ExpectedConditions.visibilityOf(opt));
         }catch (TimeoutException te){
             driver.navigate().refresh();
         }
@@ -84,7 +84,7 @@ public class MainPage {
 
     public MainPage buyItems(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        preLoading();
+        preLoading(dvBag);
         btnBuy.click();
         return this;
     }

@@ -1,0 +1,5 @@
+com\ti\pages\Login.class
+com\ti\pages\MainPage.class
+com\ti\pages\SearchPage.class
+com\ti\testcases\BaseTest.class
+com\ti\testcases\TestClass.class

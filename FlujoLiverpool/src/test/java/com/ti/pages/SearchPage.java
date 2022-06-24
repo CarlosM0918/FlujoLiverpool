@@ -45,8 +45,14 @@ public class SearchPage extends MainPage{
     /////////////////////////////////////////////////// CERVEZA ///////////////////////////////////////////////////////////
     public SearchPage clickCervezaMinerva(String item){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.visibilityOfAllElements(cervesaList));
+        try{
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .until(ExpectedConditions.visibilityOfAllElements(cervesaList));
+        }catch (TimeoutException te) {
+            preLoading(cervesaList.get(0));
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .until(ExpectedConditions.visibilityOfAllElements(cervesaList));
+        }
         for (WebElement cerveza:cervesaList) {
             if(cerveza.getText().contains(item)){
                 cerveza.click();
@@ -108,7 +114,8 @@ public class SearchPage extends MainPage{
             new WebDriverWait(driver, Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOfAllElements(productList));
         }catch (TimeoutException te){
-//            preLoading();
+            preLoading(productList.get(0));
+
             new WebDriverWait(driver, Duration.ofSeconds(8))
                     .until(ExpectedConditions.visibilityOfAllElements(productList));
         }

@@ -1,5 +1,6 @@
 package com.ti.pages;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,14 +16,19 @@ public class Login extends MainPage{
     @FindBy(id = "password")
     private WebElement txtPassword;
 
-    @FindBy(xpath = "(//button[normalize-space()='Iniciar sesión'])[1]")
+    @FindBy(xpath = "//*[contains(@value, 'default')]")
     private WebElement btnLogin;
 
     @FindBy(id = "error-element-password")
     private WebElement lblError;
 
     public Login loginAs(String userName){
-        txtUser.clear();
+        try {
+            txtUser.clear();
+        }catch (TimeoutException te){
+            preLoading(txtUser);
+            txtUser.clear();
+        }
         txtUser.sendKeys(userName);
         return this;
     }
